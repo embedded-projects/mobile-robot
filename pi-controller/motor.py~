@@ -1,0 +1,19 @@
+import serial
+
+class Motor:
+    def move_forward(self):
+        with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as ser:
+            ser.write('w')
+
+    def move_backward(self):
+        with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as ser:
+            ser.write('s')
+
+    def move_left(self):
+        with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as ser:
+            ser.write('a')
+
+    def move_right(self):
+        with serial.Serial("/dev/ttyACM0", 9600, timeout=1) as ser:
+            ser.write('d')
+            
